@@ -6,42 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../icons/bootstrap-icons.css">
     <title>Infinity Whatsapp</title>
 </head>
 
-<body>
-    <div>
-        <div id="divWelcome">
-            <div class="d-flex justify-content-center mt-5">
-                <h2 class="auth-title">Welcome to Infinity Whatsapp</h1>
+<body class="container">
+    <div id="divWelcome">
+        <div class="d-flex justify-content-center mt-5">
+            <h2 class="auth-title">Welcome to Infinity WhatsApp</h1>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn btn-success" type="button" id="btnSignin">
+                Sign in
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div id="divQR" class="row d-none mt-4">
+        <div class="col-7">
+            <p class="auth-title fw-normol fs-2 mt-3 ps-1">Scan the QR code to login</h1>
+            <div class="mt-4 ps-1">
+                <ol>
+                    <li class="pb-2">Open WhatsApp on your phone</li>
+                    <li class="pb-2">Tap <span class="fw-bold">Menu</span><i class="bi bi-three-dots-vertical bg-light m-1"></i> 
+                        or 
+                        <span class="fw-bold">Settings</span><i class="bi bi-gear-wide-connected bg-light m-1"></i> and
+                        select
+                        <span class="fw-bold">Linked Devices</span>
+                    </li>
+                    <li class="pb-2">Point your phone to this screen to capture the code</li>
+                </ol>
             </div>
-            <div class="d-flex justify-content-center mt-5">
-                <button class="btn btn-success" type="button" id="btnSignin">
-                    Sign in
-                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                </button>
+            <div class="mt-5 ps-5">
+                <a class="link-success" id="lnkHelp" href="#">Need help to login?</a>
             </div>
         </div>
-        <div id="divQR" class="d-none">
-            <div class="d-flex justify-content-center mt-3">
-                <h2 class="auth-title">Scan the QR code using Whatsapp to login</h1>
+        <div class="col">
+            <div class="d-flex justify-content-center mt-2">
+                <canvas id="canvas"></canvas>
             </div>
-            <div class="d-flex justify-content-center mt-4">
-                <div class="alert alert-info fs w-75 fw-lighter fs-6" role="alert">
-                    To use QR code scanner open Whatsapp application on your android/ios device.
-                    From linked devices tap <span class="fw-normal">LINK A DECVICE</span> to scan the QR code.
+            <div class="d-flex justify-content-center mt-3 d-none" id="divStaySignedin">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkStaySignedin">
+                    <label class="form-check-label" for="chkStaySignedin">
+                        Keep me signed in
+                    </label>
                 </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center mt-2">
-            <canvas id="canvas"></canvas>
-        </div>
-        <div class="d-flex justify-content-center mt-3 d-none" id="divStaySignedin">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkStaySignedin">
-                <label class="form-check-label" for="chkStaySignedin">
-                    Keep me signed in
-                </label>
             </div>
         </div>
     </div>
